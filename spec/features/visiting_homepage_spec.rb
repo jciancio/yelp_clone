@@ -6,17 +6,17 @@ feature 'Visting the Homepage' do
   end
 
   it 'displays a registration form' do
-    find_field('Name')
-    find_field('Email')
-    find_field('Email Confirmation')
-    find_field('Password')
-    find_field('Password Confirmation')
-    find_link('Register')
+    find_field('user[name]')
+    find_field('user[email]')
+    find_field('user[email_confirmation]')
+    find_field('user[password]')
+    find_field('user[password_confirmation]')
+    find_button('Create User')
   end
 
   it 'displays a login form' do
-    find_field('Email')
-    find_field('Password')
-    find_link('Login')
+    # find_field('Email')
+    # find_field('Password')
+    # find_link('Login')
   end
 end
