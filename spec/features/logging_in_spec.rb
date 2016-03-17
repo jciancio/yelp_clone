@@ -8,7 +8,7 @@ feature 'Logging In' do
     @user.save
   end
 
-  it 'creates a new session'do
+  it 'redirects to the user#show' do
     visit root_path
     find_field('user[email]')
     find_field('user[password]')
@@ -18,5 +18,4 @@ feature 'Logging In' do
     expect(current_path).to eq(sessions_path)
     page.has_content? @user.email
   end
-  it 'sets a current user'
 end
