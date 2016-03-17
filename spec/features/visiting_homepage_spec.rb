@@ -15,8 +15,8 @@ feature 'Visting the Homepage' do
   end
 
   it 'displays a login form' do
-    # find_field('Email')
-    # find_field('Password')
-    # find_link('Login')
+    find_field('user[email]')
+    find_field('user[password]')
+    find_button('Login')
   end
 end
