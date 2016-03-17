@@ -16,7 +16,7 @@ feature 'Visting the Homepage' do
   end
 
   it 'displays a login form' do
-    page.has_content?('Login')
+    page.has_content?('Log In')
     find_field('user[email]')
     find_field('user[password]')
     find_button('Login')
