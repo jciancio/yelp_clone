@@ -16,6 +16,6 @@ feature 'Logging In' do
     fill_in 'user[password]', with: @user.password
     click_button('Log In')
     expect(current_path).to eq(sessions_path)
-    page.has_content? @user.email
+    page.has_content? @user
   end
 end
