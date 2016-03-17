@@ -6,6 +6,7 @@ feature 'Visting the Homepage' do
   end
 
   it 'displays a registration form' do
+    page.has_content?('Register')
     find_field('user[name]')
     find_field('user[email]')
     find_field('user[email_confirmation]')
