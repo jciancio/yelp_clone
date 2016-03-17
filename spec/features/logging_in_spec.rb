@@ -17,5 +17,6 @@ feature 'Logging In' do
     click_button('Log In')
     expect(current_path).to eq(sessions_path)
     page.has_content? @user
+    page.has_content? 'Log Out'
   end
 end
