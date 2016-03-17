@@ -17,9 +17,9 @@
   <% end %>
 </div>
 
-<% flash.each do |k, v| %>
+<% flash.each do |key, value| %>
   <%= content_tag(:div, class: "alert alert-#{key}") do %>
-    <p><%= v %></p>
+    <p><%= value %></p>
   <% end %>
 <% end %>
 
