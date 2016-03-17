@@ -1,19 +1,19 @@
 = form_for(@user, url: users_path) do |f|
   /! Handle Errors Here!!!
   div.field
-    =f.label 'Name'
-    =f.text_field 'name'
+    =f.label :name
+    =f.text_field :name
   div.field
-    =f.label 'Email'
-    =f.email_field 'email'
+    =f.label :email
+    =f.email_field :email
   div.field
-    =f.label 'Email Confirmation'
-    =f.email_field 'email_confirmation'
+    =f.label :email_confirmation
+    =f.email_field :email_confirmation
   div.field
-    =f.label 'Password'
-    =f.password_field 'password'
+    =f.label :password
+    =f.password_field :password
   div.field
-    =f.label 'Password Confirmation'
-    =f.password_field 'password_confirmation'
+    =f.label :password_confirmation
+    =f.password_field :password_confirmation
   div.action
     =f.submit
