@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
     user = User.find_by_email(params[:email])
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
-      user_path, notice: 'Loggin In!'
+      user_path(user), notice: 'Loggin In!'
     else
       render :new
     end
