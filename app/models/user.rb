@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   has_secure_password
-  has_many :businesses
-  has_one :photo
+  has_many :businesses, dependent: :destroy
+  has_one :photo, dependent: :destroy
 
   validates :name, presence: true
   validates :email, presence: true,
