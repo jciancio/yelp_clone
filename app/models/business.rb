@@ -4,4 +4,8 @@ class Business < ActiveRecord::Base
   belongs_to :user
 
   validates :user, presence: true
+
+  def to_s
+    "Business Name: #{name}, Description: #{description}"
+  end
 end
