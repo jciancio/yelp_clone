@@ -1,5 +1,5 @@
 class Business < ActiveRecord::Base
-  has_many :reviews
-  has_many :photos
+  has_many :reviews, dependent: :destroy
+  has_many :photos, dependent: :destroy
   belongs_to :user
 end
