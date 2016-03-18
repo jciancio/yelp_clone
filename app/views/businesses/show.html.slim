@@ -1,5 +1,5 @@
 p
 = @business
-- if current_user && @business == current_user.businesses
+- if current_user && @business.user == current_user
   p
   = link_to 'Edit', edit_business_path
