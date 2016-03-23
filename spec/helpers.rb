@@ -18,4 +18,8 @@ module Helpers
     fill_in 'Password', with: 'wrongpassword'
     click_button('Log In')
   end
+
+  def sign_out(user)
+    visit logout_path
+  end
 end
