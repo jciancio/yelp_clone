@@ -35,6 +35,8 @@ class BusinessesController < ApplicationController
   end
 
   def destroy
+    @business.destroy
+    redirect_to user_path(@business.user), notice: 'Business destroyed!'
   end
 
   private
