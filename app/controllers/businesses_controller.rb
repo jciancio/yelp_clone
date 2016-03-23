@@ -27,6 +27,11 @@ class BusinessesController < ApplicationController
   end
 
   def update
+    if @business.update(business_params)
+      redirect_to @business, notice: 'Business updated!'
+    else
+      render :edit
+    end
   end
 
   def destroy
