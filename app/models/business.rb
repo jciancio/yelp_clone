@@ -3,6 +3,11 @@ class Business < ActiveRecord::Base
   has_many :photos, dependent: :destroy
   belongs_to :user
 
+  validates :name, :description, :address, :city, :state, :zip,
+            presence: true
+
+  validates :name, :address, uniqueness: true
+
   validates :user, presence: true
 
   def to_s
