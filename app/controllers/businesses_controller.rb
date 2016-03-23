@@ -14,7 +14,7 @@ class BusinessesController < ApplicationController
   end
 
   def create
-    @business = current_user.businesses.build(business_params)
+    @business = current_user.businesses.create(business_params)
 
     if @business.save
       redirect_to @business, notice: 'Business added!'
