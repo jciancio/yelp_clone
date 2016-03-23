@@ -23,6 +23,7 @@ feature 'Logging In' do
 
     it 'rerenders the login page' do
       expect(current_path).to eq(login_path)
+      expect(page).to have_content('Login Unsuccessful')
     end
   end
 end
