@@ -3,4 +3,8 @@ h1 Check out some Businesses
   p
   = link_to business, business_path(business)
 h2 Or
-= link_to 'Add a Business', new_business_path
+- if current_user
+  = link_to 'Add a Business', new_business_path
+- else
+  h3 Sign Up To Add a Business
+  = link_to 'Sign Up', signup_path
