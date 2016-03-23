@@ -12,6 +12,7 @@ feature 'Logging In' do
     it 'redirects to the user#show' do
       expect(current_path).to eq(user_path(user))
       expect(page).to have_content(@user)
+      expect(page).to have_content('Log Out')
     end
   end
 
