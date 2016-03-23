@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       redirect_to user_path(user), notice: 'Logged In!'
     else
-      redirect_to login_path
+      redirect_to login_path, alert: 'Login Unsuccessful'
     end
   end
 
