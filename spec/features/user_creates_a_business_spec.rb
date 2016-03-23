@@ -4,10 +4,7 @@ feature 'User can create a business' do
   let!(:user) { create(:user) }
 
   before do
-    visit login_path
-    fill_in "Email", with: user.email
-    fill_in "Password", with: user.password
-    click_button "Log In"
+    sign_in(user)
     click_link "Discover"
     click_link "Add a Business"
   end
