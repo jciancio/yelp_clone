@@ -5,20 +5,26 @@ feature 'Visting the Homepage' do
     visit root_path
   end
 
+  it 'displays a link to view businesses' do
+    find_link('Discover Some Businesses')
+  end
+
   it 'displays a registration form' do
-    page.has_content?('Register')
-    find_field('user[name]')
-    find_field('user[email]')
-    find_field('user[email_confirmation]')
-    find_field('user[password]')
-    find_field('user[password_confirmation]')
-    find_button('Create User')
+    within(:css, '#register') do
+      find_field('Name')
+      find_field('Email')
+      find_field('Email confirmation')
+      find_field('Password')
+      find_field('Password confirmation')
+      find_button('Create User')
+    end
   end
 
   it 'displays a login form' do
-    page.has_content?('Log In')
-    find_field('user[email]')
-    find_field('user[password]')
-    find_button('Login')
+    within(:css, '#login') do
+      find_field('Email')
+      find_field('Password')
+      find_button('Log In')
+    end
   end
 end
