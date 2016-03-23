@@ -1,2 +1,4 @@
 h2 Edit Your Business
 = render 'form'
+= button_to 'Delete This Business', business_path(@business), method: :delete,
+            data: { confirm: 'Are you sure?' }
