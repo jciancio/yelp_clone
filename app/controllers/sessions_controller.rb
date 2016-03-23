@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       redirect_to user_path(user), notice: 'Logged In!'
     else
-      render :new
+      redirect_to login_path
     end
   end
 
