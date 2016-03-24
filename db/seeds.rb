@@ -5,3 +5,23 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+require 'faker'
+
+users = [ { name: Faker::Name.name, email: Faker::Internet.safe_email, password: Faker::Internet.password(8) },
+          { name: Faker::Name.name, email: Faker::Internet.safe_email, password: Faker::Internet.password(8) },
+          { name: Faker::Name.name, email: Faker::Internet.safe_email, password: Faker::Internet.password(8) },
+          { name: Faker::Name.name, email: Faker::Internet.safe_email, password: Faker::Internet.password(8) },
+          { name: Faker::Name.name, email: Faker::Internet.safe_email, password: Faker::Internet.password(8) },
+          { name: Faker::Name.name, email: Faker::Internet.safe_email, password: Faker::Internet.password(8) },
+          { name: Faker::Name.name, email: Faker::Internet.safe_email, password: Faker::Internet.password(8) },
+          { name: Faker::Name.name, email: Faker::Internet.safe_email, password: Faker::Internet.password(8) },
+          { name: Faker::Name.name, email: Faker::Internet.safe_email, password: Faker::Internet.password(8) },
+          { name: Faker::Name.name, email: Faker::Internet.safe_email, password: Faker::Internet.password(8) }
+         ]
+
+users.each do |user|
+  User.create! name: user[:name], email: user[:email],
+               email_confirmation: user[:email],
+               password: user[:password],
+               password_confirmation: user[:password]
+end
