@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show, :new, :create, :edit, :update, :destroy]
   resources :businesses do
-    resources :reviews
+    resources :reviews, only: [:show, :new, :create, :edit, :update, :destroy]
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
