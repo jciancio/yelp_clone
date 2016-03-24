@@ -1,6 +1,6 @@
 class ReviewsController < ApplicationController
   before_action :set_review, only: [:show, :edit, :update, :destroy]
-  before_action :set_business, only: [:show, :create, :update, :destroy]
+  before_action :set_business, only: [:new, :show, :create, :update, :destroy]
 
   def show
   end
@@ -33,7 +33,7 @@ class ReviewsController < ApplicationController
 
   def destroy
     @review.destroy
-    redirect_to @business, notice 'Review deleted!'
+    redirect_to @business, notice: 'Review deleted!'
   end
 
   private
