@@ -1,2 +1,4 @@
-h1 User#edit
-p Find me in app/views/user/edit.html.slim
+h2 Edit Your Account
+= render 'form'
+= button_to 'Delete Your Account', user_path(@user), method: :delete,
+            data: { confirm: 'Are you sure you want to delete you acccount?'}
