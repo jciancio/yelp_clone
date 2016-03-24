@@ -12,7 +12,7 @@ RSpec.describe SessionsController, type: :controller do
 
   describe "POST #create" do
     it "returns http redirect" do
-      post :create
+      post :create, email: user.email, password: user.password
       expect(response).to have_http_status(:redirect)
     end
 
