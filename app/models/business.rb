@@ -11,6 +11,6 @@ class Business < ActiveRecord::Base
   validates :user, presence: true
 
   def to_s
-    "Business Name: #{name}, Description: #{description}"
+    "#{name}"
   end
 end
