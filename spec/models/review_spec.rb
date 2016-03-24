@@ -5,4 +5,5 @@ RSpec.describe Review, type: :model do
 
   it { is_expected.to belong_to(:business) }
   it { is_expected.to have_one(:photo) }
+  it { is_expected.to belong_to(:user) }
 end
