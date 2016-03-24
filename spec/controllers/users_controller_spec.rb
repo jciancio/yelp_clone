@@ -1,12 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe UsersController, type: :controller do
-  before do
-    @user = FactoryGirl.build(:user)
-    @user.email_confirmation = @user.email
-    @user.password_confirmation = @user.password
-    @user.save
-  end
+  let!(:user) { create(:user) }
 
   describe "GET #new" do
     it "returns http success" do
@@ -15,30 +10,37 @@ RSpec.describe UsersController, type: :controller do
     end
   end
 
+  describe "GET #show" do
+    it "returns http success" do
+      get :show, id: user.id
+      expect(response).to have_http_status(:success)
+    end
+  end
+
   describe "POST #create" do
     it "returns http success" do
-      post :create, user: @user
+      post :create, user: user.attributes
       expect(response).to have_http_status(:success)
     end
   end
 
   describe "GET #edit" do
     it "returns http success" do
-      get :edit, id: @user.id
+      get :edit, id: user.id
       expect(response).to have_http_status(:success)
     end
   end
 
-  describe "GET #update" do
+  describe "PATCH #update" do
     it "returns http success" do
-      get :update, id: @user.id
+      patch :update, id: user.id
       expect(response).to have_http_status(:success)
     end
   end
 
-  describe "GET #destroy" do
+  describe "DELETE #destroy" do
     it "returns http success" do
-      get :destroy, id: @user.id
+      delete :destroy, id: user.id
       expect(response).to have_http_status(:success)
     end
   end
