@@ -3,6 +3,7 @@ class ReviewsController < ApplicationController
   before_action :set_business, only: [:new, :show, :create, :update, :destroy]
 
   def show
+    @reviews = Review.where(id: params[:id])
   end
 
   def new
