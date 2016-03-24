@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 gem 'paperclip', '~> 4.3'
 gem 'slim-rails'
+gem 'materialize-sass'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5.1'
