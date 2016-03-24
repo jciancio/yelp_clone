@@ -1,0 +1,10 @@
+= form_for [@business, @review], url: business_reviews_path(@business) do |f|
+  /! Handle Errors Here!!!
+  div.field
+    = f.label :title
+    = f.text_field :title
+  div.field
+    = f.label :description
+    = f.text_area :description
+  div.actions
+    = f.submit

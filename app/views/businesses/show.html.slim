@@ -3,3 +3,9 @@ p
 - if current_user && @business.user == current_user
   p
   = link_to 'Edit', edit_business_path
+p
+- if !(current_user == @business.user)
+  = link_to 'New Review', new_business_review_path(@business)
+  / = render 'reviews/form'
+- @business.reviews.each do |review|
+  p = link_to review.title, business_review_path(@business, review)
