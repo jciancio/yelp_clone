@@ -1,11 +1,4 @@
-p
-h3 = @business
-h5 Description:
-p = @business.description
-p = @business.address
-p = @business.city
-p = @business.state
-p = @business.zip
+= render @business
 - if current_user && @business.user == current_user
   p
   = link_to 'Edit', edit_business_path
