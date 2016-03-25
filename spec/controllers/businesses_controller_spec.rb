@@ -1,6 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe BusinessesController, type: :controller do
+  let!(:user)     { create(:user) }
+  let!(:business) { create(:business, user: user) }
 
   describe "GET #index" do
     it "returns http success" do
@@ -11,7 +13,7 @@ RSpec.describe BusinessesController, type: :controller do
 
   describe "GET #show" do
     it "returns http success" do
-      get :show
+      get :show, id: business.id
       expect(response).to have_http_status(:success)
     end
   end
@@ -25,28 +27,28 @@ RSpec.describe BusinessesController, type: :controller do
 
   describe "GET #create" do
     it "returns http success" do
-      get :create
+      post :create
       expect(response).to have_http_status(:success)
     end
   end
 
   describe "GET #edit" do
     it "returns http success" do
-      get :edit
+      get :edit, id: business.id
       expect(response).to have_http_status(:success)
     end
   end
 
   describe "GET #update" do
     it "returns http success" do
-      get :update
+      patch :update, id: business.id
       expect(response).to have_http_status(:success)
     end
   end
 
   describe "GET #destroy" do
     it "returns http success" do
-      get :destroy
+      delete :destroy, id: business.id
       expect(response).to have_http_status(:success)
     end
   end
