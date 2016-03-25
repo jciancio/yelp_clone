@@ -13,9 +13,20 @@
  */
 @import "materialize";
 
-@media screen and (min-width: 850px ) {
+@media screen and (min-width: 850px) {
   html {
     width: 850px;
     margin: 0 auto 2em auto;
+  }
+}
+
+@media screen and (min-width: 200px) and (max-width: 550px) {
+  html {
+    width: 90%;
+    margin: 0 auto 1em auto;
+
+    .welcome {
+      text-align: center;
+    }
   }
 }

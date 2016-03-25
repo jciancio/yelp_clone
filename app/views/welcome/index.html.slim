@@ -1,9 +1,10 @@
-h1 Welcome
-= link_to 'Discover Some Businesses', businesses_path
-div#register
-  h2 Register
-  p
-  = render 'users/form'
-div#login
-  h2 Log In
-  = render 'sessions/form'
+div.welcome
+  h1 Welcome
+  = link_to 'Discover Some Businesses', businesses_path
+  div#register
+    h2 Register
+    p
+    = render 'users/form'
+  div#login
+    h2 Log In
+    = render 'sessions/form'
