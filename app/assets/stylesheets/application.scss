@@ -28,5 +28,12 @@
     .welcome {
       text-align: center;
     }
+
+    .action input {
+      padding: 1em 2em;
+      background-color: color("materialize-red", "lighten-2");
+      border: none;
+      border-radius: 10px;
+    }
   }
 }
