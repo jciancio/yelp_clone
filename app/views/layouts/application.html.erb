@@ -10,28 +10,33 @@
 <body>
 
 <!-- Dropdown Structure -->
-<% if current_user %>
   <ul id="dropdown1" class="dropdown-content">
-    <li><%= link_to 'Edit Account', edit_user_path(current_user) %></li>
-    <li><%= link_to 'View Account', user_path(current_user) %></li>
-    <li class="divider"></li>
-    <li><%= link_to 'Logout', logout_path%></li>
+    <% if !current_user %>
+      <li class="to-show"><%= link_to 'Sign Up', signup_path %></li>
+      <li class="to-show"><%= link_to 'Log In', login_path %></li>
+      <li class="divider to-show"></li>
+      <li class="to-show"><%= link_to 'Discover', businesses_path %></li>
+      <li class="to-show"><a href="badges.html">Search</a></li>
+    <% else %>
+      <li class="to-show"><%= link_to 'Discover', businesses_path %></li>
+      <li class="to-show"><a href="badges.html">Search</a></li>
+      <li class="divider to-show"></li>
+      <li class="to-show"><%= link_to 'Edit Account', edit_user_path(current_user) %></li>
+      <li class="to-show"><%= link_to 'View Account', user_path(current_user) %></li>
+      <li class="divider to-show"></li>
+      <li class="to-show"><%= link_to 'Logout', logout_path%></li>
+    <% end %>
   </ul>
-<% end %>
 <nav>
   <div class="nav-wrapper">
-    <a href="#!" class="brand-logo">Logo</a>
-    <ul class="right hide-on-med-and-down">
-      <% if !current_user %>
-        <li><%= link_to 'Sign Up', signup_path %></li>
-        <li><%= link_to 'Log In', login_path %></li>
-      <% end %>
-      <li><%= link_to 'Discover', businesses_path %></li>
-      <li><a href="badges.html">Search</a></li>
+    <a href="#!" class="left brand-logo">Logo</a>
+    <ul class="right">
+      <li class="to-hide"><%= link_to 'Sign Up', signup_path %></li>
+      <li class="to-hide"><%= link_to 'Log In', login_path %></li>
+      <li class="to-hide"><%= link_to 'Discover', businesses_path %></li>
+      <li class="to-hide"><a href="badges.html">Search</a></li>
       <!-- Dropdown Trigger -->
-      <% if current_user %>
-        <li><a class="dropdown-button" data-activates="dropdown1">Account<i class="material-icons right">arrow_drop_down</i></a></li>
-      <% end %>
+      <li><a class="dropdown-button to-show" data-activates="dropdown1">Account<i class="material-icons right">arrow_drop_down</i></a></li>
     </ul>
   </div>
 </nav>

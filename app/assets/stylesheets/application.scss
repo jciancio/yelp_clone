@@ -35,5 +35,13 @@
       border: none;
       border-radius: 10px;
     }
+
+    .to-hide {
+      display: none;
+    }
+
+    .to-show {
+      display: block;
+    }
   }
 }
