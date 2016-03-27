@@ -1,8 +1,10 @@
+unless current_user == @business.user
+  p Owned By: #{@business.user}
 = render @business
 - if current_user && @business.user == current_user
   p
   = link_to 'Edit', edit_business_path
-- if !(current_user == @business.user)
+- unless current_user == @business.user
   h5 Write a Review
   / # = link_to 'New Review', new_business_review_path(@business)
   = render 'reviews/form'
