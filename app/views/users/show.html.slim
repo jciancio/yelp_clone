@@ -1,10 +1,11 @@
 h3> Hey
 = current_user
+p
+= link_to 'Edit Your Account', edit_user_path(@user)
 - if current_user.businesses.size > 0
   h5 Businesses You've Added:
   = current_user.businesses.each do |business|
     = link_to 'business.name', business_path(business)
+    h5 #{link_to 'Add a Business', new_business_path}
 - else
   h5 #{link_to 'Add a Business', new_business_path}
-p
-= link_to 'Edit Your Account', edit_user_path(@user)
