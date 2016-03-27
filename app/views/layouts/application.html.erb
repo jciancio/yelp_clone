@@ -16,10 +16,10 @@
       <li class="to-show"><%= link_to 'Log In', login_path %></li>
       <li class="divider to-show"></li>
       <li class="to-show"><%= link_to 'Discover', businesses_path %></li>
-      <li class="to-show"><a href="badges.html">Search</a></li>
+      <li class="to-show search"><a href="#">Search</a></li>
     <% else %>
       <li class="to-show"><%= link_to 'Discover', businesses_path %></li>
-      <li class="to-show"><a href="badges.html">Search</a></li>
+      <li class="to-show search"><a href="#">Search</a></li>
       <li class="divider to-show"></li>
       <li class="to-show"><%= link_to 'Edit Account', edit_user_path(current_user) %></li>
       <li class="to-show"><%= link_to 'View Account', user_path(current_user) %></li>
@@ -31,13 +31,25 @@
   <div class="nav-wrapper">
     <a href="#!" class="left brand-logo">Logo</a>
     <ul class="right">
+    <% if !current_user %>
       <li class="to-hide"><%= link_to 'Sign Up', signup_path %></li>
       <li class="to-hide"><%= link_to 'Log In', login_path %></li>
+    <% else %>
       <li class="to-hide"><%= link_to 'Discover', businesses_path %></li>
       <li class="to-hide"><a href="badges.html">Search</a></li>
       <!-- Dropdown Trigger -->
       <li><a class="dropdown-button to-show" data-activates="dropdown1">Account<i class="material-icons right">arrow_drop_down</i></a></li>
+    <% end %>
     </ul>
+
+    <form id="search-form">
+      <div class="input-field">
+        <input id="search" type="search" required>
+        <label for="search"><i class="material-icons">search</i></label>
+        <%#= search_field_tag :term %>
+        <i class="material-icons" id="close">close</i>
+      </div>
+    </form>
   </div>
 </nav>
 

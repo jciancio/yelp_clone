@@ -1,7 +1,8 @@
 h1 Check out some Businesses
-- @businesses.each do |business|
-  p
-  = link_to business, business_path(business)
+ul#business-list
+  - @businesses.each do |business|
+    li
+      = link_to business, business_path(business)
 h2 Or
 - if current_user
   = link_to 'Add a Business', new_business_path
